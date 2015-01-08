@@ -1,0 +1,109 @@
+
+form { margin: 0; padding: 0 }
+input, textarea, select { font-size: 1em }
+/* input, textarea */
+input[type='text'], input[type='password'], textarea
+{ height: 30px; width: 100%; border: 1px solid #ddd; .border-radius (@radius: 4px); padding: 5px }
+
+/* select */
+select
+{ border: 1px solid #a7aeb4; .border-radius(4px) }
+
+/* checkbox, radio */
+input[type='checkbox'] { margin: 5px; vertical-align: sub }
+
+/* textarea only */
+textarea { height: auto; padding: 5px 10px }
+
+/* input button */
+input[type='button'], input[type='submit'], .button, button, .btn
+{
+    font: 600 14px/21px 'lato'; height: 31px; padding: 7px 25px 25px; display: inline-block; background-color: @brand-primary; color: @text-secondary;
+    border: none; border-bottom: 3px solid @brand-primary-darkest; background-clip: border-box!important;.border-radius(@radius: 3px);
+    &:hover { background: @brand-primary-darken; border-bottom: 3px solid @brand-primary-darkest; cursor: pointer }
+    &:focus { padding: 4px 25px 28px;  background: @brand-primary-darken; border-bottom: none; border-top: 3px solid #1e3062 }
+}
+
+input.hg-btn, a.button.hg-btn, button.hg-btn { padding: 10px 21px 29px; 
+    &:focus { padding: 7px 21px 32px }
+}
+
+input.lg-btn, a.button.lg-btn, button.lg-btn { height: 36px; padding: 8px 12px 25px;
+    &:focus { padding: 6px 20px 30px }
+}
+
+input.st-btn, a.button.st-btn, button.st-btn { padding: 5px 12px; font-weight: 400;
+    &:focus { padding: 0 20px 5px }
+}
+
+input.sm-btn, a.button.sm-btn, button.sm-btn { font-size: 14px; font-weight: 400; height: 26px; padding: 0 12px; line-height: 25px;
+    &:focus { line-height: 20px; padding: 0 12px }
+}
+
+input[type='disabled'], .btn-disabled
+{
+       background: #BDC4CC;
+       color: #eee;
+}
+
+/* Button States */
+.btn-primary
+{
+       background: @brand-primary;
+       color: @text-secondary;
+       border-color: darken(@brand-primary, 10%);
+        &:hover {  
+            background: darken(@brand-primary,10%);
+            border-color: darken(@brand-primary, 20%);
+        }
+}
+.btn-warning
+{
+       background: @text-warning;
+       color: @text-secondary;
+       border-color: darken(@text-warning, 10%);
+        &:hover {  
+            background: darken(@text-warning,10%);
+            border-color: darken(@text-warning, 20%);
+        }
+}
+.btn-info
+{
+       background: @brand-primary-lighten;
+       color: @text-secondary;
+       border-color: darken(@brand-primary-lighten, 10%);
+        &:hover {  
+            background: darken(@brand-primary-lighten,10%);
+            border-color: darken(@brand-primary-lighten, 20%);
+        }
+}
+.btn-danger
+{
+       background: @text-danger;
+       color: @text-secondary;
+       border-color: darken(@text-danger, 10%);
+        &:hover {  
+            background: darken(@text-danger,10%);
+            border-color: darken(@text-danger, 20%);
+        }
+}
+.btn-success {
+    background: @text-success;
+    color: @text-secondary;
+    border-color: darken(@text-success, 10%);
+    &:hover {  
+            background: darken(@text-success,10%);
+            border-color: darken(@text-success, 20%);
+    }
+}
+.btn.disabled {
+    background: @gray;
+    color: darken(@gray,15%);
+    border-color: darken(@gray, 10%);
+}
+
+a.button 
+{
+    color: #fff;
+}
+a.btn::visited { color: #fff }
