@@ -1,24 +1,31 @@
-@fontsize:  12px;
-.font(@fontsize) {
-    font-size: @fontsize
+.font(@base-font-size) {
+    font-size: @base-font-size
 }
 
 /* font */
 *
-{ .font(12px); box-sizing: border-box; font-family: 'Lato';  }
+{ .font((@base-font-size)+.5); box-sizing: border-box; font-family: 'Lato';  }
 
 /* list item */
 ul { list-style: none; margin: 0; padding: 0; display: block; font-size: 1em;
-    li { background: none; display: block; margin: 0.4em 0.5em 0 0; padding: 0 }
+    li { display: block; margin: 0.4em 0.5em 0 0; padding: 0 }
 }
-ol { margin: 0 0 1em 20px; line-height: 1.5em;
-    li { margin-top: 1em }
+ol { margin: 0.4em 1.5em 0 0; line-height: 1.5em;
+    li { margin: 0.4em 0.5em 0 0; padding: 0; list-style-position: inside }
+}
+ul.list-bordered {
+        li { 
+            margin: 0; padding: 5px 15px; border: 1px solid @gray; border-top: none; .border-radius (@radius: 3px);
+               &:first-of-type { border-top: 1px solid @gray; .border-radius (@radius: 3px 3px 0 0); }
+               &:last-of-type { .border-radius (@radius: 0 0 3px 3px); }
+               &:hover, &:focus { background: @gray; }
+        }
 }
 
 /* a link */
 a {	color: @brand-primary; text-decoration: none;
     &:visited,  &:link, &:hover { color: @brand-primary; text-decoration: none }
-    &:hover { color: #eee; cursor: pointer  }
+    &:hover { color: @gray; cursor: pointer  }
 }
 
 .btn {
@@ -40,11 +47,13 @@ dd { margin-bottom: 1em }
 p { line-height: 1.5em; margin: 1em 0 0.5em 0 }
 p { line-height: 15px}
 
-h1, h2, h3, h4 { color: #2b2c30 }
-h1 { padding: 0 15px; color: @brand-primary-darkest; font-weight: 900; font-family: 'lato'; font-size: 20px; line-height: 30px }
-h2 { font-size: 18px; color: @text-primary-lighten; font-weight: 600; font-family: 'lato';  padding: 1em 0 0 20px; }
-h3 { font-size: 16px; margin: 10px 0 0 0; padding: 0 }
-h4 { font-size: 14px; margin: 15px 0 0; padding: 0 }
+h1, h2, h3, h4 { color: @brand-primary; padding: 0; margin: 15px 0 0; }
+h1 { font-size: (@base-font-size)+2.5; color: @brand-primary-darkest; font-weight: 900;  line-height: 30px; }
+h2 { font-size: (@base-font-size)+2; color: @text-primary-lighten; font-weight: 600;  }
+h3 { font-size: (@base-font-size)+1.5; color: @text-primary-lightest }
+h4 { font-size: (@base-font-size)+1 }
+h5 { font-size: (@base-font-size)+.5 }
+h6 { font-size: @base-font-size }
 
 .text-right { text-align: right }
 .text-left { text-align: left }
